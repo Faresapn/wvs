@@ -49,7 +49,7 @@ const gettimeclaim = (address) => new Promise((resolve, reject) => { fetch('http
 });
 
 
-var file = fs.readFileSync('phrase.txt', 'utf-8');
+var file = fs.readFileSync('phrase.js', 'utf-8');
 var splitFile = file.split('\r\n');
 console.clear();
 console.log("============================================================================");
@@ -128,16 +128,9 @@ console.log("===================================================================
         const client = new SuiClient({
           url: "https://fullnode.mainnet.sui.io",
         });
-        let waktu 
-        waktu = await gettimeclaim(address);
-        waktu = waktu.result.data.content.fields.last_claim;
-        waktu = waktu.toString();
-        //console.log(waktu)
-        let time
-        time = Date.now();
-        time = time.toString()
+      
         //console.log(time)
-        const msto = time - waktu
+        const msto = 7200002
         //console.log(msto)
         if(msto > 7200000){
       
